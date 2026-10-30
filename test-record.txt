@@ -1,0 +1,19 @@
+test_bad_types (test_protocol.Protocol.test_bad_types) ... ok
+test_candidate (test_protocol.Protocol.test_candidate) ... ok
+test_duplicates (test_protocol.Protocol.test_duplicates) ... ok
+test_inconclusive_health (test_protocol.Protocol.test_inconclusive_health) ... ok
+test_input_detached (test_protocol.Protocol.test_input_detached) ... ok
+test_invalid_no_mutation (test_protocol.Protocol.test_invalid_no_mutation) ... ok
+test_manifest_budget (test_protocol.Protocol.test_manifest_budget) ... ok
+test_missing_counts (test_protocol.Protocol.test_missing_counts) ... ok
+test_replay_and_tamper (test_protocol.Protocol.test_replay_and_tamper) ... ok
+test_retraction (test_protocol.Protocol.test_retraction) ... ok
+test_returned_results_cannot_mutate_ledger (test_protocol.Protocol.test_returned_results_cannot_mutate_ledger) ... ok
+test_revision_denied (test_protocol.Protocol.test_revision_denied) ... ok
+test_zero_counts (test_protocol.Protocol.test_zero_counts) ... ok
+test_zero_off_is_not_zero_background (test_protocol.Protocol.test_zero_off_is_not_zero_background) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.005s
+
+OK
