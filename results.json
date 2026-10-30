@@ -1,0 +1,93 @@
+{
+  "plan": {
+    "seed": 20261019,
+    "families": 20000,
+    "trials": 100,
+    "alpha": 0.01,
+    "on_mean": 0.2,
+    "off_exposure_ratio": 10.0,
+    "injected_signal_mean": 6.0,
+    "assumptions": "fixed windows/cuts; stationary equal on/off rates; independent on/off Poisson counts; full exposure; trusted quality metadata",
+    "scope": "per-family false-alert probability, not yearly FAR or astrophysical discovery significance"
+  },
+  "null": {
+    "uncorrected_known_background": {
+      "count": 2121,
+      "total": 20000,
+      "rate": 0.10605,
+      "clopper_pearson_95": [
+        0.10181526342186237,
+        0.1103996332399447
+      ]
+    },
+    "bonferroni_known_background": {
+      "count": 118,
+      "total": 20000,
+      "rate": 0.0059,
+      "clopper_pearson_95": [
+        0.004885950073467441,
+        0.007061454188793605
+      ]
+    },
+    "bonferroni_naive_estimated_background": {
+      "count": 18339,
+      "total": 20000,
+      "rate": 0.91695,
+      "clopper_pearson_95": [
+        0.9130395860561158,
+        0.9207387014176001
+      ]
+    },
+    "bonferroni_exact_on_off": {
+      "count": 21,
+      "total": 20000,
+      "rate": 0.00105,
+      "clopper_pearson_95": [
+        0.0006500803486648397,
+        0.0016045910822638997
+      ]
+    }
+  },
+  "injected_window_power": {
+    "count": 13125,
+    "total": 20000,
+    "rate": 0.65625,
+    "clopper_pearson_95": [
+      0.6496201816845105,
+      0.6628343705511288
+    ]
+  },
+  "unflagged_rate_shift_stress": {
+    "count": 6489,
+    "total": 20000,
+    "rate": 0.32445,
+    "clopper_pearson_95": [
+      0.3179625273976729,
+      0.3309885377728766
+    ]
+  },
+  "perfectly_correlated_windows": {
+    "count": 0,
+    "total": 20000,
+    "rate": 0.0,
+    "clopper_pearson_95": [
+      0.0,
+      0.0001844269639618992
+    ]
+  },
+  "unflagged_overdispersion_stress": {
+    "count": 10185,
+    "total": 20000,
+    "rate": 0.50925,
+    "clopper_pearson_95": [
+      0.5022957446901222,
+      0.5162015654730681
+    ]
+  },
+  "notes": [
+    "No full light/particle transport, spatial likelihood or real observations.",
+    "Flags can suppress a known problem; unknown rate shifts can still invalidate inference.",
+    "No blind human custody: seeds are separate, but author can inspect all synthetic data.",
+    "Bonferroni validity needs valid marginal p-values, not independent windows."
+  ]
+}
