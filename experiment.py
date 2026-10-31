@@ -63,9 +63,11 @@ class Ledger:
         return result
     def replay(self):
         replay=Ledger(self.ids)
-        for entry in self.log:
+        for index,entry in enumerate(self.log):
             replay.apply(entry['id'],entry['event'])
-            if replay.log[-1] != entry:
+            # apply() is idempotent for duplicate requests, but every stored
+            # log entry must reconstruct a distinct append to the hash chain.
+            if len(replay.log) != index+1 or replay.log[-1] != entry:
                 raise ValueError('replay mismatch')
         return replay
 
