@@ -55,6 +55,12 @@ class Protocol(unittest.TestCase):
     def test_input_detached(self):
         e=good();l=Ledger(['a']);l.apply('a',e);e['on']=0
         self.assertEqual(l.latest['a']['event']['on'],10)
+    def test_replay_rejects_inserted_duplicate_log_entry(self):
+        for position in (1, 2):
+            with self.subTest(position=position):
+                l=Ledger(['a','b']);l.apply('a',good());l.apply('b',good())
+                l.log.insert(position,deepcopy(l.log[position-1]))
+                with self.assertRaises(ValueError):l.replay()
     def test_invalid_no_mutation(self):
         l=Ledger(['a'])
         for v in [[],None,good(ratio=float('nan'))]:
